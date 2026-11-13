@@ -5,31 +5,10 @@ import config from './config.js';
 import adminRoutes from './routes/admin.js';
 import authRoutes from './routes/auth.js';
 import publicRoutes from './routes/public.js';
-
-const app = express();
-app.disable('x-powered-by');
-if (config.trustProxy) app.set('trust proxy', config.trustProxy);
-app.use(helmet());
-app.get('/healthz', (req, res) => res.type('text').send('ok'));
-
-// Solo las versiones optimizadas son publicas; los originales viven en storage/private y nunca se sirven.
-app.use('/media', express.static(config.photosDir, { maxAge: '365d', immutable: true, index: false, dotfiles: 'deny' }));
-app.use('/media', (req, res) => res.sendStatus(404));
-
-app.use('/api/auth', authRoutes);
-app.use('/api/admin', adminRoutes);
-app.use('/api', publicRoutes);
-app.use('/api', (req, res) => res.status(404).json({ error: 'No encontrado' }));
-
-app.use('/admin', express.static(path.join(config.root, 'admin')));
-
-const publicDir = path.join(config.root, 'public');
-app.use(express.static(publicDir, { maxAge: '1h' }));
-app.get('*', (req, res) => res.sendFile(path.join(publicDir, 'index.html')));
-
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: 'Error interno del servidor' });
-});
-
+const app=express();app.disable('x-powered-by');if(config.trustProxy)app.set('trust proxy',config.trustProxy);app.use(helmet());
+app.get('/healthz',(req,res)=>res.type('text').send('ok'));
+app.use('/api/auth',authRoutes);app.use('/api/admin',adminRoutes);app.use('/api',publicRoutes);app.use('/api',(req,res)=>res.status(404).json({error:'No encontrado'}));
+app.use('/admin',express.static(path.join(config.root,'admin')));
+const publicDir=path.join(config.root,'public');app.use(express.static(publicDir,{maxAge:'1h'}));app.get('*',(req,res)=>res.sendFile(path.join(publicDir,'index.html')));
+app.use((err,req,res,next)=>{console.error(err);res.status(500).json({error:'Error interno del servidor'});});
 export default app;
