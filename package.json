@@ -11,9 +11,11 @@
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
     "create-admin": "node scripts/create-admin.js",
-    "test": "node scripts/smoke-test.js"
+    "test": "node scripts/smoke-test.js",
+    "db:migrate:turso": "node scripts/migrate-turso.js"
   },
   "dependencies": {
+    "@libsql/client": "^0.18.0",
     "better-sqlite3": "^13.0.0",
     "exifr": "^7.1.3",
     "express": "^4.21.2",

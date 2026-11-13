@@ -19,4 +19,6 @@ export default {
   dbPath: env.DB_PATH === ':memory:' ? ':memory:' : inRoot(env.DB_PATH, 'storage/db/archive.sqlite'),
   photosDir: inRoot(env.PHOTOS_DIR, 'storage/photos'),
   privateDir: inRoot(env.PRIVATE_DIR, 'storage/private'),
+  tursoUrl: env.TURSO_DATABASE_URL || '',
+  tursoAuthToken: env.TURSO_AUTH_TOKEN || '',
 };
