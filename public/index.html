@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photographic Archive</title>
+  <meta name="description" content="Archivo fotográfico personal.">
+  <meta name="theme-color" content="#F2F1EC">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="site">
+    <a class="brand" href="/">Photographic Archive</a>
+    <button id="menu" type="button" aria-controls="nav" aria-expanded="false">Menú</button>
+    <nav id="nav" aria-label="Principal">
+      <a href="/collections">Collections</a>
+      <a href="/archive">Archive</a>
+      <a href="/favorites">Favorites</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1"><noscript><p class="state">Este sitio necesita JavaScript.</p></noscript></main>
+  <footer class="site"><span>Photographic Archive</span><span id="foot-links"></span><span>Archivo fotográfico personal</span></footer>
+
+  <div id="lb" class="lb" role="dialog" aria-modal="true" aria-label="Visor de fotografías" hidden>
+    <button id="lb-close" class="lb-btn close" type="button" aria-label="Cerrar">×</button>
+    <button id="lb-prev" class="lb-btn prev" type="button" aria-label="Fotografía anterior">‹</button>
+    <button id="lb-next" class="lb-btn next" type="button" aria-label="Fotografía siguiente">›</button>
+    <div class="stage" id="lb-stage"><img id="lb-img" alt=""></div>
+    <div class="cap-bar">
+      <div><h2 id="lb-title"></h2><p id="lb-meta"></p><p id="lb-desc"></p></div>
+      <div><p id="lb-exif"></p><p id="lb-count"></p></div>
+    </div>
+  </div>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

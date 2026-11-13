@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Admin · Photographic Archive</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main id="login" hidden>
+    <h1>Photographic Archive</h1>
+    <form id="loginForm">
+      <label>Usuario <input id="user" autocomplete="username" required></label>
+      <label>Contraseña <input id="password" type="password" autocomplete="current-password" required></label>
+      <button>Entrar</button>
+      <p id="loginError" role="alert"></p>
+    </form>
+  </main>
+  <div id="panel" hidden>
+    <header><h1>Photographic Archive · Admin</h1><button id="logout" type="button">Salir</button></header>
+    <section>
+      <h2>Subir fotografías</h2>
+      <form id="uploadForm">
+        <input id="files" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+        <button>Subir</button>
+      </form>
+      <p id="uploadMsg" role="status"></p>
+    </section>
+    <section>
+      <h2>Colecciones</h2>
+      <form id="colForm"><input id="colName" placeholder="Nombre" required><input id="colDesc" placeholder="Descripción (opcional)"><button>Crear</button></form>
+      <ul id="colList"></ul>
+    </section>
+    <section>
+      <h2>Fotografías <span id="count"></span></h2>
+      <div id="grid"></div>
+    </section>
+    <dialog id="editor"><form id="editForm"></form></dialog>
+  </div>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
