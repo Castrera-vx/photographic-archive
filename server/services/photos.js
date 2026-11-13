@@ -1,7 +1,7 @@
 import db from '../db/turso.js';
 import { slugify } from './fields.js';
 
-export const mediaUrls=(id)=>({thumb:`/media/thumb/${id}.webp`,medium:`/media/medium/${id}.webp`,large:`/media/large/${id}.webp`});
+export const mediaUrls=(id)=>({thumb:`/api/media/thumb/${id}.webp`,medium:`/api/media/medium/${id}.webp`,large:`/api/media/large/${id}.webp`});
 const BASE=`SELECT p.*,c.slug AS category_slug,c.name AS category_name,col.slug AS collection_slug,col.name AS collection_name
 FROM photos p LEFT JOIN categories c ON c.id=p.category_id LEFT JOIN collections col ON col.id=p.collection_id`;
 export const toPublic=(p)=>({id:p.id,title:p.title,description:p.description,capturedAt:p.captured_at,location:p.location,
