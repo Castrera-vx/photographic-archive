@@ -5,11 +5,11 @@
   "type": "module",
   "engines": { "node": ">=20.6" },
   "scripts": {
-    "start": "node --env-file=.env server/index.js",
-    "dev": "node --watch --env-file=.env server/index.js",
-    "create-admin": "node scripts/create-admin.js",
-    "test": "node scripts/smoke-test.js"
-  },
+  "start": "node server/index.js",
+  "dev": "node --watch server/index.js",
+  "create-admin": "node scripts/create-admin.js",
+  "test": "node scripts/smoke-test.js"
+  }
   "dependencies": {
     "better-sqlite3": "^13.0.0",
     "exifr": "^7.1.3",
