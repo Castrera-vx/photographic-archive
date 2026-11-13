@@ -12,7 +12,8 @@
     "dev": "node --watch server/index.js",
     "create-admin": "node scripts/create-admin.js",
     "test": "node scripts/smoke-test.js",
-    "db:migrate:turso": "node scripts/migrate-turso.js"
+    "db:migrate:turso": "node scripts/migrate-turso.js",
+    "test:turso": "node scripts/test-turso.js"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",
