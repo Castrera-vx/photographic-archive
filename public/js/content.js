@@ -1,7 +1,7 @@
 // Contenido editable del portafolio. Deja '' (o []) lo que no quieras mostrar:
 // las secciones que dependen de un dato vacío (contacto, nombre) se ocultan solas.
 export const PROFILE = { name: 'un joven grupo de universitarios', role: '--' }; // p. ej. { name: 'Tu nombre', role: 'Fotógrafo' }
-export const BIBLIA = { email: 'Biblia transmedia', links: [{ label: 'Biblia', url: 'https://docs.google.com/document/d/e/2PACX-1vRVIqQOiEeRBQue6XSc2-gsw-75XFzZGHWNqf-r69J_blnVP65mj5WK69xdsYZZBQ/pub' }] }
+export const BIBLIA = { email: 'Biblia transmedia', links: [] }; // links: [{ label: 'Instagram', url: 'https://...' }]
 
 export const HEADLINE = ['Photo', 'Book', 'archive'];
 export const INTRO_TITLE = ['Fotografías', 'Del Photobook', 'archivadas'];
